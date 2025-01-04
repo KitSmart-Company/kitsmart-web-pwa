@@ -111,13 +111,13 @@
     }, []);
 
     return (
-      <div className="mt-32" {...props}>
+      <div className="mt-72 lg:mt-44" {...props}>
         <Title
           className="font-bold  mb-10"
           text="Калькулятор кредита для расчёта онлайн"
           size="xl"
         />
-        <div className="w-full h-full grid grid-cols-2 justify-center p-3 rounded-3xl bg-[#F3F4F6]">
+        <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 md:gap-4 justify-center p-3 rounded-3xl bg-[#F3F4F6]">
           <div className="p-[18px]">
             <div className="bg-white p-1 rounded-full flex justify-center items-center gap-2 mb-5">
               <button

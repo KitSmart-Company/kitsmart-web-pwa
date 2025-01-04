@@ -12,7 +12,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
   description,
 }) => {
   return (
-    <div className="flex justify-center flex-col m-auto items-center">
+    <div className="flex flex-col m-auto items-center h-full justify-start">
       <h1 className="w-[70px] h-[70px] mb-3 flex justify-center items-center bg-[#864BFD] rounded-full text-center text-white text-4xl font-bold">
         {step}
       </h1>
@@ -37,7 +37,7 @@ const getStepDescription = (step: string): string => {
 const ProcessSection: React.FC = () => {
   return (
     <div className="bg-[#F3F4F6] rounded-3xl p-10">
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-3 items-start">
         {["Скачать приложение", "Заполнить анкету", "Получить приглашение"].map(
           (step, index) => (
             <ProcessStep

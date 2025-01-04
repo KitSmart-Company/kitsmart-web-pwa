@@ -6,11 +6,11 @@ const BenefitsOfLoan: React.FC = () => {
   return (
     <div>
       <Title
-        className="font-bold mt-20 w-[800px]"
+        className="font-bold mt-20 w-full"
         text="Преимущества кредита наличными в Альфа‑Банке"
         size="xl"
       />
-      <div className="grid grid-cols-2 grid-rows-2 gap-6 mt-20">
+      <div className="grid grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-6 mt-20">
         <div className="flex justify-between col-span-2 bg-[#F3F4F6] p-[38px] rounded-3xl relative">
           <div className="flex flex-col">
             <h2 className="text-xl font-bold">Уменьшим вашу ставку</h2>
@@ -28,17 +28,16 @@ const BenefitsOfLoan: React.FC = () => {
           </div>
           <div className="p-4 rounded-lg absolute right-0 bottom-0">
             <img
-              width={500}
               src="https://alfabank.servicecdn.ru/site-upload/ba/6a/1053/main-main.png"
               alt="Описание фото"
               loading="lazy"
-              className="h-auto rounded-lg"
+              className="h-auto rounded-lg w-52 lg:w-[500px] md:w-64"
             />
           </div>
         </div>
-        <div className="row-start-2 bg-[#F3F4F6] p-[38px] rounded-3xl relative">
+        <div className="row-start-2 col-span-2 lg:col-span-1 bg-[#F3F4F6] p-[38px] rounded-3xl relative">
           <h2 className="text-xl font-bold mb-3">Удобно вносить платежи</h2>
-          <p className="text-[15px] w-[500px]">
+          <p className="text-[15px]]">
             Гасите кредит по графику или досрочно любым удобным способом — в
             мобильном приложении, интернет-банке, банкоматах или отделениях.
             Быстро и без комиссии
@@ -50,7 +49,7 @@ const BenefitsOfLoan: React.FC = () => {
             alt=""
           />
         </div>
-        <div className="row-start-2 bg-[#F3F4F6] p-[38px] rounded-3xl relative">
+        <div className="row-start-3 lg:row-start-2 col-span-2 lg:col-span-1 bg-[#F3F4F6] p-[38px] rounded-3xl relative">
           <h2 className="text-xl font-bold mb-3">Удобно вносить платежи</h2>
           <p className="text-[15px] w-[500px]">
             Гасите кредит по графику или досрочно любым удобным способом — в

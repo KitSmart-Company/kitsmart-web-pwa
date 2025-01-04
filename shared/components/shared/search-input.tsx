@@ -60,7 +60,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
       >
         <Search className="absolute top-1/2 translate-y-[-50%] left-3 h-5 text-gray-400" />
         <input
-          className="p-4 rounded-full w-full pl-11 bg-[#ffffff] outline-none"
+          className="p-4 min-w-[200px] rounded-full w-full pl-11 bg-[#ffffff] outline-none"
           type="text"
           placeholder="Найти на Kitsmart"
           onFocus={() => setFocused(true)}

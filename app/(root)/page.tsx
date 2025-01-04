@@ -12,6 +12,7 @@ import { GetSearchParams, findPizzas } from "@/shared/lib/find-pizzas";
 import { CarouselPlugin } from "@/shared/components/shared/slider";
 import TitleImageExample from "@/shared/components/shared/slider-image";
 import Footer from "@/shared/components/shared/footer";
+import {MobileNavMenu} from "@/shared/components/shared/mobile-nav-menu";
 interface HomeProps {
   searchParams: GetSearchParams;
 }
@@ -21,6 +22,7 @@ const Home: React.FC<HomeProps> = async ({ searchParams }) => {
 
   return (
     <div className=" relative">
+      <MobileNavMenu/>
       <CarouselPlugin />
       <div className="bg-white absolute w-full top-[80%] rounded-t-[100px]">
         <Container className="mt-5 ">
@@ -34,35 +36,36 @@ const Home: React.FC<HomeProps> = async ({ searchParams }) => {
         </Container>
         <Container className="mt-10 pb-14">
           <div className="flex gap-[80px]">
-            <div className="w-[250px] ">
+            <div className="w-0 lg:w-[250px] md:w-0 sm:w-0">
               <Suspense>
-                <Filters />
+                <Filters/>
               </Suspense>
             </div>
             <div className="flex-1">
               <div className="flex flex-col gap-16">
                 {categories.map(
-                  (category) =>
-                    category.products.length > 0 && (
-                      <ProductsGroupList
-                        key={category.id}
-                        title={category.name}
-                        categoryId={category.id}
-                        items={category.products}
-                      />
-                    )
+                    (category) =>
+                        category.products.length > 0 && (
+                            <ProductsGroupList
+                                key={category.id}
+                                title={category.name}
+                                categoryId={category.id}
+                                items={category.products}
+
+                            />
+                        )
                 )}
               </div>
             </div>
           </div>
           <Title
-            text="Черная пятница"
-            size="2xl"
-            className="font-bold text-center mt-10 mb-10"
+              text="Черная пятница"
+              size="2xl"
+              className="font-bold text-center mt-10 mb-10"
           />
-          <TitleImageExample />
+          <TitleImageExample/>
         </Container>
-        <Footer />
+        <Footer/>
       </div>
     </div>
   );

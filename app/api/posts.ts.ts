@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     if (req.method === 'GET') {
-      const posts = await prisma.post.findMany();
+      const posts: any = await prisma.post.findMany();
       res.json(posts);
     } else {
       res.setHeader('Allow', ['GET']);

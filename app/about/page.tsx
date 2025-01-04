@@ -15,7 +15,7 @@ const About = () => {
           size="2xl"
         />
         <img
-          className="absolute object-cover bottom-0"
+          className="absolute object-cover bottom-0 right-0 w-96 lg:w-[500px]"
           src="https://cdn.tbank.ru/static/pages/files/b1e91e9d-38d4-4705-88bd-ae9e8b38efdb.webp"
           alt=""
         />
@@ -24,10 +24,11 @@ const About = () => {
           очередей
         </p>
       </Container>
-      <Container className="w-[1000px]">
+      <Container className="max-w-[1000px]">
         <Title text="Преимущества" size="xl" className="font-bold mb-10" />
-        <div className="grid grid-cols-2 grid-rows-5 gap-4">
-          <div className="h-[500px] row-span-3 bg-[#EBF6FF] rounded-3xl p-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-rows-3 gap-4">
+          <div className="row-span-2 bg-[#EBF6FF] rounded-3xl p-6 relative">
             <div>
               <h1 className="text-3xl font-[600] mb-3">Скидки до 70%</h1>
               <span className="text-[17px]">
@@ -41,7 +42,7 @@ const About = () => {
               />
             </div>
           </div>
-          <div className="row-span-2 col-start-1 row-start-4 bg-[#F2F3F5] rounded-3xl p-6">
+          <div className="row-span-1 bg-[#F2F3F5] rounded-3xl p-6">
             <h1 className="text-3xl font-[600] mb-3">
               Бонус за приглашение друзей
             </h1>
@@ -51,14 +52,16 @@ const About = () => {
               кладовщиками, директором и заместителем{" "}
             </span>
           </div>
-          <div className="row-span-2 col-start-2 row-start-1 bg-[#F2F3F5] rounded-3xl p-6">
+          </div>
+          <div className="grid grid-rows-3 gap-4">
+          <div className="row-span-1 bg-[#F2F3F5] rounded-3xl p-6">
             <h1 className="text-3xl font-[600] mb-3">Дружелюбный коллектив</h1>
             <span className="text-[17px]">
               В Лавке вы будете общаться с курьерами, кладовщиками, директором и
               заместителем
             </span>
           </div>
-          <div className="row-span-3 col-start-2 row-start-3 bg-[#EBF6FF] rounded-3xl p-6 relative">
+          <div className="row-span-2 bg-[#EBF6FF] rounded-3xl p-6 relative">
             <h1 className="text-3xl font-[600] mb-3">
               Бонус за приглашение друзей
             </h1>
@@ -73,6 +76,7 @@ const About = () => {
               alt=""
             />
           </div>
+          </div>
         </div>
         <Title
           text="Как всё устроено?"
@@ -84,10 +88,10 @@ const About = () => {
             Яндекс Лавка — это специальный магазин без покупателей в разных
             районах города
           </h1>
-          <div className="grid grid-cols-4 grid-rows-1 gap-4 relative">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative">
             <div className="bg-white p-3 rounded-3xl">
               <p className="text-[14px]">
-                <span className="font-bold">Директор и заместитель</span>{" "}
+                <span className="font-bold">Директор и заместитель</span>{" "}<br/>
                 контролируют процессы в Лавке
               </p>
               <img
@@ -138,21 +142,35 @@ const About = () => {
           </div>
         </div>
         <Title text="Статистика" size="xl" className="font-bold mb-10 mt-20" />
-        <div className="grid grid-cols-3 grid-rows-4 gap-4">
-          <div className="col-span-3 row-span-3 p-8 bg-[#F2F3F5] rounded-3xl relative">
-            <h3 className="text-xl font-bold">Курсы валют в отделениях</h3>
-            <p className="mt-5">
-              Информация о курсах обмена иностранных валют является справочной и
-              может меняться в течение дня. Точную информацию о курсах можно
-              узнать в интернет-банке. Список отделений доступен по ссылке
-            </p>
-            <img
-              className="w-[150px] object-cover absolute bottom-0 right-0"
-              src="https://alfabank.servicecdn.ru/site-upload/52/47/1449/D_CardPromo_58x58_071123.png"
-              alt=""
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mx-8">
+          <div className="grid grid-rows-4 gap-4">
+            <div className="row-span-3 p-8 bg-[#F2F3F5] rounded-3xl relative">
+              <h3 className="text-xl font-bold">Курсы валют в отделениях</h3>
+              <p className="mt-5">
+                Информация о курсах обмена иностранных валют является справочной и
+                может меняться в течение дня. Точную информацию о курсах можно
+                узнать в интернет-банке. Список отделений доступен по ссылке
+              </p>
+              <img
+                  className="w-[150px] object-cover absolute bottom-0 right-0"
+                  src="https://alfabank.servicecdn.ru/site-upload/52/47/1449/D_CardPromo_58x58_071123.png"
+                  alt=""
+              />
+            </div>
+            <div className="row-span-1 flex justify-between items-center gap-6 bg-[#F2F3F5] rounded-3xl p-8">
+              <div>
+                <h3 className="text-xl font-bold mb-1">Поддержка</h3>
+                <span>Любой вопрос решим по телефону или в чате</span>
+              </div>
+              <img
+                  className="w-[50px] object-cover"
+                  src="https://alfabank.servicecdn.ru/site-upload/3b/91/5227/D_CardPromo_58x58_211223.png"
+                  alt=""
+              />
+            </div>
           </div>
-          <div className="flex justify-between items-center gap-6 col-span-2 col-start-4 bg-[#F2F3F5] rounded-3xl p-8">
+          <div className="grid grid-rows-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div className="flex justify-between items-center gap-6 bg-[#F2F3F5] rounded-3xl p-8">
             <div>
               <h3 className="text-xl font-bold mb-1 ">
                 Офисы банка и банкоматы
@@ -160,12 +178,12 @@ const About = () => {
               <span>Найдите ближайшие к вам отделения и банкоматы</span>
             </div>
             <img
-              className="w-[50px] object-cover"
-              src="https://alfabank.servicecdn.ru/site-upload/52/47/1449/D_CardPromo_58x58_071123.png"
-              alt=""
+                className="w-[50px] object-cover"
+                src="https://alfabank.servicecdn.ru/site-upload/52/47/1449/D_CardPromo_58x58_071123.png"
+                alt=""
             />
           </div>
-          <div className="flex justify-between items-center gap-6 col-span-2 col-start-4 row-start-2 bg-[#F2F3F5] rounded-3xl p-8">
+          <div className="flex justify-between items-center gap-6 bg-[#F2F3F5] rounded-3xl p-8">
             <div>
               <h3 className="text-xl font-bold mb-1">Платежи и переводы</h3>
               <span>Оплачивайте и переводите деньги без комиссии</span>
@@ -176,7 +194,7 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="flex justify-between items-center gap-6 col-span-2 col-start-4 row-start-3 bg-[#F2F3F5] rounded-3xl p-8">
+          <div className="flex justify-between items-center gap-6 bg-[#F2F3F5] rounded-3xl p-8">
             <div>
               <h3 className="text-xl font-bold mb-1">Для самозанятых</h3>
               <span>Регистрируйтесь самозанятым с Альфа-Банком</span>
@@ -187,7 +205,7 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="flex justify-between items-center gap-6 col-span-2 col-start-4 row-start-4 bg-[#000000] text-white rounded-3xl p-8">
+          <div className="flex justify-between items-center gap-6 bg-[#000000] text-white rounded-3xl p-8">
             <div>
               <h3 className="text-xl font-bold mb-1">
                 Купить или продать недвижимость
@@ -200,21 +218,12 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="flex justify-between items-center gap-6 col-span-3 col-start-1 row-start-4 bg-[#F2F3F5] rounded-3xl p-8">
-            <div>
-              <h3 className="text-xl font-bold mb-1">Поддержка</h3>
-              <span>Любой вопрос решим по телефону или в чате</span>
-            </div>
-            <img
-              className="w-[50px] object-cover"
-              src="https://alfabank.servicecdn.ru/site-upload/3b/91/5227/D_CardPromo_58x58_211223.png"
-              alt=""
-            />
           </div>
         </div>
         <Title text="О банке" size="xl" className="font-bold mb-10 mt-20" />
-        <div className="grid grid-cols-8 grid-rows-5 gap-4">
-          <div className="col-span-4 row-span-3 bg-[#E7DCFF] rounded-3xl p-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 grid-rows-3 gap-4">
+          <div className="col-span-2 row-span-3 bg-[#E7DCFF] place-items-center rounded-3xl p-5">
             <h3 className="text-center mb-3 text-xl font-bold">
               1 место в рейтинге Банки.ру
             </h3>
@@ -224,17 +233,18 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="col-span-2 row-span-2 col-start-1 row-start-4 bg-[#E5ECFF] rounded-3xl p-5">
+          <div className="col-span-1 row-span-3 bg-[#E5ECFF] rounded-3xl p-5">
             <h3 className="text-xl font-bold mb-1">1 место</h3>
             <span className="text-gray-600 text-[16px]">
               в рейтинге Сравни.ру
             </span>
           </div>
-          <div className="col-span-2 row-span-2 col-start-3 row-start-4 bg-[#E5ECFF] rounded-3xl p-5">
+          <div className="col-span-1 row-span-3 bg-[#E5ECFF] rounded-3xl p-5">
             <h3 className="text-xl font-bold mb-1">Лучший работадатель</h3>
             <span className="text-gray-600 text-[16px]">На HeadHunter</span>
           </div>
-          <div className="col-span-4 row-span-5 col-start-5 row-start-1 bg-[#F2F3F5] rounded-3xl p-5">
+          </div>
+          <div className="bg-[#F2F3F5] rounded-3xl p-5">
             <div className="flex justify-between items-center mt-8">
               <div>
                 <h2 className="text-xl font-bold mb-1">
