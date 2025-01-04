@@ -165,7 +165,7 @@ const GoodToKnow = () => {
           </div>
         </TabsContent>
       </Tabs>
-      <div className="w-[800px]">
+      <div className="w-full lg:w-[800px">
           <span className="text-gray-600 text-[15px]">
             Действуют для заёмщиков, заключивших Договор выдачи Кредита наличными
             и подписавших Индивидуальные условия выдачи Кредита наличными,

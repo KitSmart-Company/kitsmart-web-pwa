@@ -12,8 +12,9 @@ const ReadyLoans = () => {
     text="Готовые кредиты"
     size="xl"
   />
-  <div className="grid grid-cols-2 grid-rows-2 gap-4">
-    <div className="flex bg-[#F2F3F5] rounded-3xl">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 place-content-center">
+    <div className="bg-[#F2F3F5] rounded-3xl m-auto">
+      <div className="flex bg-[#F2F3F5] rounded-3xl">
       <img
         loading="lazy"
         className="rounded-3xl"
@@ -46,7 +47,8 @@ const ReadyLoans = () => {
         </div>
       </div>
     </div>
-    <div className="bg-[#F2F3F5] rounded-3xl">
+    </div>
+    <div className="bg-[#F2F3F5] rounded-3xl m-auto">
       <div className="flex bg-[#F2F3F5] rounded-3xl">
         <img
           loading="lazy"
@@ -81,7 +83,7 @@ const ReadyLoans = () => {
         </div>
       </div>
     </div>
-    <div className="bg-[#F2F3F5] rounded-3xl row-start-2">
+    <div className="bg-[#F2F3F5] rounded-3xl m-auto">
       <div className="flex bg-[#F2F3F5] rounded-3xl">
         <img
           loading="lazy"
@@ -116,7 +118,7 @@ const ReadyLoans = () => {
         </div>
       </div>
     </div>
-    <div className="bg-[#F2F3F5] rounded-3xl row-start-2">
+    <div className="bg-[#F2F3F5] rounded-3xl m-auto">
       <div className="flex bg-[#F2F3F5] rounded-3xl">
         <img
           loading="lazy"

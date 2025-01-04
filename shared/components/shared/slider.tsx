@@ -4,9 +4,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   "https://main-cdn.sbermegamarket.ru/upload/mnt/ff5de9e4-1657-4b3c-a175-29fd20773661.jpg",
-  "https://main-cdn.sbermegamarket.ru/upload/mnt/de842a1d-116a-4d8e-86fb-0d305f32cb6d.jpg", 
+  "https://main-cdn.sbermegamarket.ru/upload/mnt/de842a1d-116a-4d8e-86fb-0d305f32cb6d.jpg",
   "https://main-cdn.sbermegamarket.ru/upload/mnt/7eb0cc89-62e4-41b1-ae3e-c633bb25ec76.jpg",
-  "https://main-cdn.sbermegamarket.ru/upload/mnt/63f73d20-c47e-46cc-8d79-90813711bc20.jpg"
+  "https://main-cdn.sbermegamarket.ru/upload/mnt/63f73d20-c47e-46cc-8d79-90813711bc20.jpg",
 ];
 
 export function CarouselPlugin() {
@@ -18,14 +18,14 @@ export function CarouselPlugin() {
   const handlePrev = () => {
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -62,58 +62,69 @@ export function CarouselPlugin() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 3000); 
-    return () => clearInterval(interval); 
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
-      <div className="relative  flex items-center gap-3">
-        
-        <div className="relative m-auto w-full">
-          <div className="relative m-0 p-0">
-            <p className="bg-gray-200 opacity-80 right-0 text-gray-700 p-0.5 mt-2 mr-3 px-3 text-[10px] rounded-full absolute">Реклама</p>
-          <img
-            className={`w-full h-[700px] cursor-pointer transition-opacity duration-500 object-cover ${
-              isTransitioning ? "" : ""
-            }`}
-            src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-            onLoad={handleTransitionEnd}
-            loading="lazy"
-          />
-          </div>
+      <div
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+      >
+        <div className="relative flex items-center gap-3 overflow-hidden">
+          <div className="relative m-auto w-full">
+            <div className="relative m-0 p-0">
+              <p className="bg-gray-200 opacity-80 right-0 text-gray-700 p-0.5 mt-2 mr-3 px-3 text-[10px] rounded-full absolute z-10">
+                Реклама
+              </p>
+              <div className="relative overflow-hidden">
+                <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{
+                      transform: `translateX(-${currentIndex * 100}%)`,
+                      // width: `${images.length * 100}%`,
+                    }}
+                >
+                  {images.map((image, index) => (
+                      <img
+                          key={index}
+                          className="w-full h-[700px] object-cover flex-shrink-0"
+                          src={image}
+                          alt={`Slide ${index + 1}`}
+                          loading="lazy"
+                      />
+                  ))}
+                </div>
+              </div>
+            </div>
 
-          <button
-            onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 outline-none bg-white rounded-full p-3 shadow-md"
-          >
-            <ChevronLeft color="#7C3AED" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 outline-none bg-white rounded-full p-3 shadow-md"
-          >
-            <ChevronRight color="#7C3AED" />
-          </button>
-          
-          <div className="flex space-x-2 mt-2 justify-center items-center absolute right-0 left-0 top-[33rem]">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleIndicatorClick(index)}
-                className={`w-[40px] h-[8px] rounded-full ${
-                  currentIndex === index ? "bg-[#9d64ff]" : "bg-gray-300"
-                }`}
-              />
-            ))}
+            <button
+                onClick={handlePrev}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 outline-none bg-white rounded-full p-3 shadow-md"
+            >
+              <ChevronLeft color="#7C3AED" />
+            </button>
+            <button
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 outline-none bg-white rounded-full p-3 shadow-md"
+            >
+              <ChevronRight color="#7C3AED" />
+            </button>
+
+            <div className="flex space-x-2 mt-2 justify-center items-center absolute right-0 left-0 top-[33rem]">
+              {images.map((_, index) => (
+                  <button
+                      key={index}
+                      onClick={() => handleIndicatorClick(index)}
+                      className={`w-[40px] h-[8px] rounded-full ${
+                          currentIndex === index ? "bg-[#9d64ff]" : "bg-gray-300"
+                      }`}
+                  />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import { Title } from './title';
 import { Button } from '../ui';
 
+//!!!! Это надо убрать
 interface Props {
   imageUrl: string;
   name: string;
@@ -34,6 +35,7 @@ export const ChooseProductForm: React.FC<Props> = ({
 
       <div className="w-[490px] rounded-3xl bg-[#F3F4F6] p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />
+        <p className="text-sm text-gray-500">Placeholder</p>
         <Button
           loading={loading}
           onClick={() => onSubmit?.()}

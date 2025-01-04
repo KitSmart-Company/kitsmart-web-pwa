@@ -5,7 +5,7 @@ import { useCartStore } from '@/shared/store';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { ChoosePizzaForm } from './choose-pizza-form';
-import { ChooseProductForm } from './choose-product-form';
+// import { ChooseProductForm } from './choose-product-form';
 
 interface Props {
   product: ProductWithRelations;
@@ -41,6 +41,7 @@ export const ProductForm: React.FC<Props> = ({ product, onSubmit: _onSubmit }) =
       <ChoosePizzaForm
         imageUrl={product.imageUrl}
         name={product.name}
+        stats={product.stats}
         ingredients={product.ingredients}
         items={product.items}
         onSubmit={onSubmit}
@@ -49,14 +50,14 @@ export const ProductForm: React.FC<Props> = ({ product, onSubmit: _onSubmit }) =
     );
   }
 
-  return (
-    <ChooseProductForm
-      imageUrl={product.imageUrl}
-      name={product.name}
-      onSubmit={onSubmit}
-      price={firstItem.price}
-      loading={loading}
-      
-    />
-  );
+  // return (
+  //   <ChooseProductForm
+  //     imageUrl={product.imageUrl}
+  //     name={product.name}
+  //     onSubmit={onSubmit}
+  //     price={firstItem.price}
+  //     loading={loading}
+  //
+  //   />
+  // );
 };

@@ -44,9 +44,31 @@ async function up() {
     ],
   });
 
-  await prisma.category.createMany({
-    data: categories,
+  const existingMainCategory = await prisma.mainCategory.findUnique({
+    where: { name: 'Телефоны' },
   });
+
+  if (!existingMainCategory) {
+    await prisma.mainCategory.create({
+      data: {
+        name: 'Телефоны',
+      },
+    });
+  }
+
+  // Use the mainCategoryId when creating categories
+  const mainCategory = await prisma.mainCategory.findUnique({
+    where: { name: 'Телефоны' },
+  });
+
+  if (mainCategory) {
+    await prisma.category.createMany({
+      data: categories.map(category => ({
+        ...category,
+        mainCategoryId: mainCategory.id, // Assign the mainCategoryId
+      })),
+    });
+  }
 
   await prisma.ingredient.createMany({
     data: _ingredients,
@@ -59,9 +81,9 @@ async function up() {
   const apple1 = await prisma.product.create({
     data: {
       name: 'Apple iPhone 14 128GB nanoSim',
-      imageUrl:
-        'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2014%20128GB%20nanoSim.png',
+      imageUrl: 'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2014%20128GB%20nanoSim.png',
       categoryId: 1,
+      stats: { color: 'black', weight: '174g' }, // Add this line
       ingredients: {
         connect: _ingredients.slice(0, 5),
       },
@@ -71,9 +93,9 @@ async function up() {
   const apple2 = await prisma.product.create({
     data: {
       name: 'Apple iPhone 14 Pro Max 256GB nanoSim',
-      imageUrl:
-        'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2014%20Pro%20Max%20256GB%20nanoSim.png',
+      imageUrl: 'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2014%20Pro%20Max%20256GB%20nanoSim.png',
       categoryId: 1,
+      stats: { color: 'silver', weight: '240g' }, // Add this line
       ingredients: {
         connect: _ingredients.slice(5, 10),
       },
@@ -83,14 +105,15 @@ async function up() {
   const apple3 = await prisma.product.create({
     data: {
       name: 'Apple iPhone 15 Pro 128GB Blue Titanium',
-      imageUrl:
-        'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2015%20Pro%20128GB%20Blue%20Titanium.png',
+      imageUrl: 'https://raw.githubusercontent.com/KitSmart-Company/kitsmart-products/refs/heads/main/products/apple/Apple%20iPhone%2015%20Pro%20128GB%20Blue%20Titanium.png',
       categoryId: 1,
+      stats: { color: 'blue', weight: '206g' }, // Add this line
       ingredients: {
         connect: _ingredients.slice(10, 40),
       },
     },
   });
+
 
 
   await prisma.productItem.createMany({
@@ -157,75 +180,73 @@ async function up() {
     },
   });
 
-  await prisma.story.createMany({
-    skipDuplicates: true,
-    data: [
-      {
-        previewImageUrl:
-          'https://basket-03.wbbasket.ru/vol363/part36329/36329770/images/big/5.webp',
-      },
-      {
-        previewImageUrl:
-          'https://basket-15.wbbasket.ru/vol2325/part232585/232585355/images/big/1.webp',
-      },
-      {
-        previewImageUrl:
-          'https://basket-13.wbbasket.ru/vol1960/part196048/196048385/images/big/1.webp',
-      },
-      {
-        previewImageUrl:
-          'https://basket-17.wbbasket.ru/vol2689/part268946/268946034/images/big/1.webp',
-      },
-      {
-        previewImageUrl:
-          'https://basket-10.wbbasket.ru/vol1492/part149203/149203078/images/big/1.webp',
-      },
-      {
-        previewImageUrl:
-          'https://basket-12.wbbasket.ru/vol1713/part171386/171386074/images/big/1.webp',
-      },
-    ],
-  });
+  const existingStories = await prisma.story.findMany();
+  if (existingStories.length === 0) {
+    await prisma.story.createMany({
+      skipDuplicates: true,
+      data: [
+        {
+          previewImageUrl:
+              'https://basket-03.wbbasket.ru/vol363/part36329/36329770/images/big/5.webp',
+        },
+        {
+          previewImageUrl:
+              'https://basket-15.wbbasket.ru/vol2325/part232585/232585355/images/big/1.webp',
+        },
+        {
+          previewImageUrl:
+              'https://basket-13.wbbasket.ru/vol1960/part196048/196048385/images/big/1.webp',
+        },
+        {
+          previewImageUrl:
+              'https://basket-17.wbbasket.ru/vol2689/part268946/268946034/images/big/1.webp',
+        },
+        {
+          previewImageUrl:
+              'https://basket-10.wbbasket.ru/vol1492/part149203/149203078/images/big/1.webp',
+        },
+        {
+          previewImageUrl:
+              'https://basket-12.wbbasket.ru/vol1713/part171386/171386074/images/big/1.webp',
+        },
+      ],
+    });
 
-  await prisma.storyItem.createMany({
-    data: [
-      {
-        storyId: 1,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 2,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 3,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 4,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 5,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 6,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
-      },
-      {
-        storyId: 7,
-        sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
-      },
-    ],
-  });
+    await prisma.storyItem.createMany({
+      data: [
+        {
+          storyId: 1,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
+        },
+        {
+          storyId: 2,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
+        },
+        {
+          storyId: 3,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
+        },
+        {
+          storyId: 4,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
+        },
+        {
+          storyId: 5,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+        },
+        {
+          storyId: 6,
+          sourceUrl:
+              'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+        },
+      ],
+    });
+  }
 }
 
 async function down() {

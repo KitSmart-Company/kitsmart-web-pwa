@@ -1,43 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="23d6144f-725a-451a-bbec-c03ee7300aa8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/categories/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/favorites/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/components/shared/add-favorite.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/components/shared/mobile-nav-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/services/dto/favorites.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/services/favorites.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/store/favorite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(root)/@modal/(.)product/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/@modal/(.)product/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(root)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/about/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/posts.ts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/posts.ts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/seed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/ready-loans.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/ready-loans.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/benefits-of-loan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/benefits-of-loan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/calculator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/calculator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/choose-pizza-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/choose-pizza-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/choose-product-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/choose-product-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/filters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/filters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/good-to-know.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/good-to-know.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/process-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/process-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/product-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/product-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/product-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/product-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/products-group-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/products-group-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/search-input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/search-input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/slider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/sort-popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/sort-popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/components/shared/top-bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/shared/components/shared/top-bar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/services/api-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/services/api-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/store/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2gofOydI2Fnes1guAPBddSVBXTu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sandor/Documents/code/skit&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.prisma:push.executor&quot;: &quot;Run&quot;,
+    &quot;npm.prisma:seed.executor&quot;: &quot;Run&quot;,
+    &quot;npm.prisma:studio.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sandor/Documents/code/skit/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="npm.prisma:seed">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prisma:push" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prisma:push" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prisma:seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prisma:seed" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prisma:studio" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prisma:studio" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prisma:seed" />
+        <item itemvalue="npm.prisma:push" />
+        <item itemvalue="npm.prisma:studio" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,7 +168,17 @@
       <option name="presentableId" value="Default" />
       <updated>1716368864561</updated>
       <workItem from="1716368877067" duration="10000" />
+      <workItem from="1734789529119" duration="16023000" />
+      <workItem from="1734841243578" duration="10000" />
+      <workItem from="1735039627700" duration="2226000" />
+      <workItem from="1735127830492" duration="4346000" />
+      <workItem from="1735485787448" duration="7678000" />
+      <workItem from="1735569200058" duration="11787000" />
+      <workItem from="1735985995783" duration="13210000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
